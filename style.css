@@ -1,0 +1,467 @@
+/* ============================================================
+   STYLE.CSS
+   Shared by every page (index.html, research.html, cv.html,
+   travel.html). Edit colors/fonts here and the whole site
+   updates at once — no need to touch the individual pages.
+   ============================================================ */
+
+:root{
+  --bg:      #FFFFFF;   /* page background */
+  --ink:     #181C24;   /* body text — cool near-black */
+  --ink-soft:#565F6D;   /* secondary text (subtitle, meta) — cool slate gray */
+  --link:    #1B345C;   /* link color — deep, saturated navy */
+  --link-hover: #0F2038;
+  --rule:    #E2E5EB;   /* hairline borders — cool neutral */
+
+  --accent:      #1E3A66; /* primary accent, deep navy */
+  --accent-dark: #0F2038;
+  --accent-soft: #F6F7F5; /* pale slate-blue tint for subtle fills/hovers */
+  --offwhite:    #F9FBFB; /* barely-there warm-neutral for reading panels */
+
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --max-width: 920px;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+}
+
+a{ color:var(--link); text-decoration:underline; text-underline-offset:2px; }
+a:hover{ color:var(--link-hover); }
+
+.wrap{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* --- Header / nav --- */
+header.site{
+  border-bottom:2px solid var(--accent);
+  padding:22px 0 16px;
+  margin-bottom:34px;
+}
+.site-name{
+  display:none;
+}
+
+nav.site-nav{
+  margin-top:0;
+}
+nav.site-nav a{
+  color:var(--ink-soft);
+  text-decoration:none;
+  margin-right:18px;
+  font-size:15px;
+}
+nav.site-nav a:hover{ color:var(--accent); text-decoration:underline; }
+nav.site-nav a.active{
+  color:var(--accent);
+  font-weight:600;
+  text-decoration:none;
+  border-bottom:2px solid var(--accent);
+  padding-bottom:4px;
+}
+
+/* --- Page content --- */
+main{ padding-bottom:30px; }
+
+h1{
+  font-size:28px;
+  font-weight:600;
+  margin:0 0 14px;
+  position:relative;
+  padding-bottom:12px;
+}
+h1::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:46px;
+  height:3px;
+  background:var(--accent);
+  border-radius:2px;
+}
+.intro-header h1::after{
+  left:50%;
+  transform:translateX(-50%);
+}
+h2{
+  font-size:19px;
+  font-weight:600;
+  margin:38px 0 14px;
+  padding-bottom:6px;
+  border-bottom:2px solid var(--accent);
+  color:var(--accent-dark);
+}
+h3{
+  font-size:15px;
+  font-weight:600;
+  margin:24px 0 10px;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+}
+
+.subtitle{
+  font-size:17px;
+  color:var(--ink-soft);
+  margin:0 0 22px;
+}
+.subtitle-strong{
+  font-weight:475;
+  color:var(--ink);
+}
+
+p{ margin:0 0 16px; }
+
+/* --- About / home page --- */
+ul.interest-list{
+  list-style:disc;
+  margin:0 0 20px;
+  padding-left:18px;
+}
+ul.interest-list li::marker{
+  font-size:0.7em;
+}
+ul.interest-list li{ margin-bottom:10px; }
+
+.contact-line{
+  margin-top:28px;
+  margin-bottom:16px;
+  padding-top:18px;
+  border-top:1px solid var(--rule);
+  font-size:16px;
+  color:var(--ink-soft);
+  text-align:center;
+}
+.contact-line-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:4px 6px;
+}
+.contact-line-row:not(.contact-links-row){
+  gap:4px 5px;
+}
+.contact-links-row{
+  margin-top:6px;
+}
+.contact-line a{ font-size:16px; }
+.linkedin-link,
+.scholar-link{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+.linkedin-icon,
+.scholar-icon{
+  width:16.5px;
+  height:16.5px;
+  vertical-align:middle;
+}
+
+/* --- Research page: citation list --- */
+ul.pub-list{
+  list-style:none;
+  margin:0 0 10px;
+  padding:0;
+}
+ul.pub-list:last-of-type{
+  margin-bottom:30px;
+}
+ul.pub-list li{
+  margin-bottom:18px;
+  font-size:16px;
+}
+ul.pub-list li .pub-links{
+  font-size:14px;
+  font-weight:400;
+}
+
+/* --- CV page --- */
+.cv-actions{ margin-bottom:20px; }
+.cv-actions a{
+  display:inline-block;
+  padding:8px 16px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:15px;
+  font-weight:600;
+  transition:background .15s;
+}
+.cv-actions a:hover{ background:var(--accent-dark); color:#fff; }
+.cv-embed{
+  width:100%;
+  height:80vh;
+  border:1px solid var(--rule);
+  border-top:3px solid var(--accent);
+  border-radius:3px;
+}
+.cv-fallback{
+  border:1px dashed var(--rule);
+  border-radius:3px;
+  padding:20px;
+  color:var(--ink-soft);
+  font-size:15px;
+}
+
+/* --- Travel page: slideshow --- */
+.slideshow{
+  margin:6px 0 24px;
+}
+.slideshow-viewport{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:3px;
+  border:1.1px solid #111111;
+  overflow:hidden;
+  background:#F4F4F4;
+}
+.slide-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.slide-caption{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  padding:10px 14px;
+  font-size:16px;
+  color:#fff;
+  text-align:center;
+  background:linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+  display:none;
+}
+.slide-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,0.85);
+  color:var(--ink);
+  font-size:20px;
+  line-height:1;
+  cursor:pointer;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+.slideshow.multi .slide-arrow{ display:flex; }
+.slide-arrow.prev{ left:10px; }
+.slide-arrow.next{ right:10px; }
+.slide-dots{
+  display:none;
+  justify-content:center;
+  gap:8px;
+  margin-top:10px;
+}
+.slideshow.multi .slide-dots{ display:flex; }
+.slide-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  border:none;
+  padding:0;
+  background:var(--rule);
+  cursor:pointer;
+}
+.slide-dot.active{ background:var(--accent); }
+.slide-arrow:hover{ background:#fff; color:var(--accent); }
+ul.travel-grid{
+  columns:2;
+  column-gap:26px;
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-size:15.5px;
+}
+ul.travel-grid li{
+  padding:6px 0;
+  border-bottom:1px dotted var(--rule);
+  break-inside:avoid;
+  color:var(--ink-soft);
+}
+
+/* --- Footer --- */
+footer{
+  border-top:1px solid var(--rule);
+  padding:20px 0 50px;
+  font-size:13.5px;
+  color:var(--ink-soft);
+}
+
+/* --- Responsive --- */
+@media (max-width:560px){
+  body{ font-size:16px; }
+  nav.site-nav a{ margin-right:12px; font-size:14px; }
+  ul.travel-grid{ columns:1; }
+}
+
+
+/* --- About page: full-width color band behind the bio section --- */
+.about-band{
+  width:100%;
+  background:var(--accent-soft);
+  padding:32px 0 36px;
+  margin-bottom:36px;
+}
+.intro-header{
+  text-align:center;
+  margin-bottom:24px;
+}
+.profile-row{
+  display:flex;
+  align-items:flex-start;
+  gap:30px;
+  margin-bottom:8px;
+}
+.profile-photo-frame{
+  flex-shrink:0;
+}
+.profile-photo{
+  display:block;
+  width: 288px;
+  height: 363px;
+  object-fit:cover;
+  border-radius:6px;
+  margin:0;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 14px rgba(15,32,56,0.15);
+}
+.profile-text{ flex:1; min-width:0; max-width:560px; font-size:11.9pt; }
+.profile-text p:last-child,
+.profile-text ul:last-child{ margin-bottom:0; }
+
+.bio-centered{
+  width:820px;
+  max-width:100%;
+  margin:24px 0 0;
+  text-align:center;
+  font-size:11.9pt;
+}
+
+@media (max-width:560px){
+  .profile-row{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+}
+
+/* Research cards */
+.paper-card{margin:0 0 18px;}
+.paper-card summary{list-style:none;cursor:pointer}
+.paper-card summary::-webkit-details-marker{display:none}
+.paper-header{
+display:flex;justify-content:space-between;align-items:flex-start;
+padding:14px 18px;background:var(--bg);border:1px solid var(--rule);
+border-left:3px solid var(--accent);
+border-radius:6px;transition:.15s;
+}
+.paper-header:hover{background:var(--accent-soft);border-color:var(--rule);border-left-color:var(--accent)}
+.paper-title{flex:1;padding-right:20px;line-height:1.6}
+.paper-icon::before{content:'+';font-size:22px;color:var(--accent);font-weight:300}
+.paper-card[open] .paper-header{border-left-color:var(--accent)}
+.paper-card[open] .paper-icon::before{content:'−';color:var(--accent)}
+.paper-abstract{
+margin-top:8px;padding:16px 20px;background:var(--offwhite);
+border-left:4px solid var(--accent);border-radius:0 4px 4px 0;
+color:#3F3E3B;line-height:1.7
+}
+
+/* --- CV page: keep the original teal scheme, untouched by the rest of the site's navy --- */
+body.cv-page{
+  --link:        #1F6F72;
+  --link-hover:  #134548;
+  --accent:      #1F6F72;
+  --accent-dark: #134548;
+  --accent-soft: #E6F2F1;
+}
+
+/* --- Teaching page --- */
+ul.teaching-list{
+  list-style:none;
+  margin:0 0 30px;
+  padding:0;
+}
+.teaching-card{ margin:0 0 14px; }
+.teaching-card summary{
+  list-style:none;
+  cursor:pointer;
+}
+.teaching-card summary::-webkit-details-marker{ display:none; }
+.teaching-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:14px 18px;
+  background:var(--bg);
+  border:1px solid var(--rule);
+  border-left:3px solid var(--accent);
+  border-radius:6px;
+  transition:.15s;
+}
+.teaching-header:hover{ background:var(--accent-soft); border-color:var(--rule); border-left-color:var(--accent); }
+.teaching-card[open] .teaching-header{ border-left-color:var(--accent); }
+.teaching-summary-text{ flex:1; padding-right:20px; }
+.teaching-icon::before{
+  content:'+';
+  font-size:22px;
+  color:var(--accent);
+  font-weight:300;
+}
+.teaching-card[open] .teaching-icon::before{ content:'\2212'; color:var(--accent); }
+.teaching-desc{
+  margin-top:8px;
+  padding:16px 20px;
+  background:var(--offwhite);
+  border-left:4px solid var(--accent);
+  border-radius:0 4px 4px 0;
+  color:#3F3E3B;
+  line-height:1.7;
+  font-size:14.5px;
+}
+.teaching-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:4px 16px;
+}
+.teaching-course{
+  font-weight:600;
+  font-size:16px;
+  line-height:1.5;
+}
+.teaching-instructor{
+  font-weight:400;
+  color:var(--ink-soft);
+}
+.teaching-years{
+  color:var(--ink-soft);
+  font-size:14.5px;
+  white-space:nowrap;
+}
+.teaching-level{
+  margin-top:4px;
+  color:var(--ink-soft);
+  font-size:14.5px;
+}
