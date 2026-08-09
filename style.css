@@ -6,7 +6,7 @@
    ============================================================ */
 
 :root{
-  --bg:      #FEFCFD;   /* page background */
+  --bg:      #f7f2ee;   /* page background */
   --ink:     #181C24;   /* body text — cool near-black */
   --ink-soft:#565F6D;   /* secondary text (subtitle, meta) — cool slate gray */
   --link:    #1B345C;   /* link color — deep, saturated navy */
@@ -16,7 +16,7 @@
   --accent:      #1E3A66; /* primary accent, deep navy */
   --accent-dark: #0F2038;
   --accent-soft: #F4F4F4;      /* research panel hover */
-  --about-bg:    #EEF4F8;         /* About Me background */
+  --about-bg:    #dedad6;         /* About Me background */
   --offwhite:    #F9F9FB; /* barely-there warm-neutral for reading panels */
 
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
