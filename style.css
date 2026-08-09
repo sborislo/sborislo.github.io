@@ -6,7 +6,7 @@
    ============================================================ */
 
 :root{
-  --bg:      #f5fefc;   /* page background */
+  --bg:      #FAFBFB;   /* page background */
   --ink:     #181C24;   /* body text — cool near-black */
   --ink-soft:#565F6D;   /* secondary text (subtitle, meta) — cool slate gray */
   --link:    #1B345C;   /* link color — deep, saturated navy */
