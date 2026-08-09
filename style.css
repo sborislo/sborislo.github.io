@@ -218,6 +218,10 @@ ul.pub-list li .pub-links{
   font-size:15px;
 }
 
+.cv-embed {
+  margin-bottom: 30px;
+}
+
 /* --- Travel page: slideshow --- */
 .slideshow{
   margin:6px 0 24px;
