@@ -172,6 +172,10 @@ ul.interest-list li{ margin-bottom:10px; }
   height:16.5px;
   vertical-align:middle;
 }
+img.cbr-icon{
+  border-radius:50%;
+  object-fit:cover;
+}
 
 /* --- Research page: citation list --- */
 ul.pub-list{
