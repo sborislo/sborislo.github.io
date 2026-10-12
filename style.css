@@ -159,13 +159,15 @@ ul.interest-list li{ margin-bottom:10px; }
 }
 .contact-line a{ font-size:16px; }
 .linkedin-link,
-.scholar-link{
+.scholar-link,
+.cbr-link{
   display:inline-flex;
   align-items:center;
   gap:5px;
 }
 .linkedin-icon,
-.scholar-icon{
+.scholar-icon,
+.cbr-icon{
   width:16.5px;
   height:16.5px;
   vertical-align:middle;
